@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Персональный сайт Гридасовой Карины. Связь со мной.</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="script/check.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <div class="content">
+        <a name="top"></a>
+        <header>
+            <h1>Вы попали на персональный сайт <br> Гридасовой Карины Владиславовны</h1>
+        </header>
+        <nav>
+            <ul class="mainMenu">
+                <li><a href="mainPage.html">Главная</a></li>
+                <li><a href="aboutMe.html">Обо мне</a></li>
+                <li><a href="myInterests.html">Мои интересы</a></li>
+                <li><a href="photoalbum.html">Мой фотоальбом</a></li>
+                <li><a href="education.html">Образование</a></li>
+                <li><a href="contacts.html">Связь со мной</a></li>
+                <li class="last"><a href="test.html">Входное тестирование</a></li>
+            </ul>
+        </nav>
+        <section>
+            <form id="contacts" action="mailto:quartz_90@mail.ru" method="post" name="contactsForm" onsubmit="return checkData()">
+                <h3>Для связи со мной напишите свои личные данные и задайте вопрос.</h3>
+                <p>Ваше ФИО:<br>
+                    <input type="text" size="40" name="FIO" class="inputLength1" title="Фамилия Имя Отчество полностью" placeholder="Фамилия Имя Отчество полностью">
+                </p>
+                <p>Ваш телефон:<br>
+                    <input type="tel" name="tel" placeholder="+7/+3XXXXXXXXXXX" title="+7 или +3 и 9-11 цифр">
+                </p>
+                <p class="focusP2">Ваш пол<br>
+                    <input type="radio" name="pol" value="a1">Мужской<br>
+                    <input type="radio" name="pol" value="a2">Женский<br>
+                </p>
+                <p>Ваш возраст: <br>
+                    <select class="focusSelect3" name="age">
+                        <option value="">Выберите свой возраст</option>
+                        <option value="от 15 до 18">от 15 до 18</option>
+                        <option value="от 19 до 22">от 19 до 22</option>
+                        <option value="от 23 до 26">от 23 до 26</option>
+                        <option value="от 27 до 30">от 27 до 30</option>
+                        <option value="от 31 до 34">от 31 до 34</option>
+                        <option value="от 35 до 38">от 35 до 38</option>
+                        <option value="от 39 до 42">от 39 до 42</option>
+                        <option value="от 43 до 46">от 43 до 46</option>
+                        <option value="от 47 до 50">от 47 до 50</option>
+                        <option value="от 51 до 54">от 51 до 54</option>
+                    </select>
+                </p>
+                <p>Ваш e-mail:<br>
+                    <input type="email" name="email" class="inputLength1" placeholder="Ваш e-mail">
+                </p>
+                <textarea name="question" placeholder="Напишите свой вопрос"></textarea>
+                <input type="submit" name="submit" class="submit" form="contacts" value="Отправить">
+            </form>
+        </section>
+    </div>
+    <footer>
+        <p class="footerNote1">&copy; 2018 GRIDI</p>
+        <p class="footerNote2">г. Севастополь СевГУ</p>
+        <p class="anchor1"><a href="#top">Наверх</a></p>
+    </footer>
+</div>
+</body>
+</html>

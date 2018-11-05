@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Персональный сайт Гридасовой Карины. Мои интересы.</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="script/list.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <div class="content">
+        <div class="currentTime" id="currentTime"></div>
+        <a name="top"></a>
+        <header>
+            <h1>Вы попали на персональный сайт <br> Гридасовой Карины Владиславовны</h1>
+        </header>
+        <nav>
+            <ul class="mainMenu">
+                <li><a href="mainPage.html">Главная</a></li>
+                <li><a href="aboutMe.html">Обо мне</a></li>
+                <li><a href="myInterests.html">Мои интересы</a></li>
+                <li><a href="photoalbum.html">Мой фотоальбом</a></li>
+                <li><a href="education.html">Образование</a></li>
+                <li><a href="contacts.html">Связь со мной</a></li>
+                <li class="last"><a href="test.html">Входное тестирование</a></li>
+            </ul>
+        </nav>
+        <section class="myInterests">
+            <h2>Мои интересы</h2>
+            <a href="#hobbi" class="first">Моё хобби</a>
+            <a href="#loveMusic">Любимая музыка</a>
+            <a href="#loveBook">Любимые книги</a>
+            <a href="#loveCinema" class="last">Любимые фильмы</a>
+            <div class="clear"></div>
+            <a name="hobbi"></a>
+            <script>
+                list("u","myHobbies","circle","Крепко спать","Вкусно есть")
+            </script>
+            <a name="loveMusic"></a>
+            <img id="pictureMusic" src="img/music.jpg" width="300px" height="300px" alt="">
+            <script>
+                list("o","loveMusic","a","БИ-2","Brainstorm","Кино","Король и Шут","The Retuses","Мумий Троль","ДДТ")
+            </script>
+            <a name="loveBook"></a>
+            <img id="pictureBooks" src="img/books.png" width="400px" height="300px" alt="">
+            <script>
+                list("u",'loveBooks',"square","Виктор Гюго. Отверженные","Виктор Гюго. Человек, который смеется","Валентин Пикуль. Битва железных канцлеров")
+            </script>
+            <a name="loveCinema"></a>
+            <img id="pictureCinema" src="img/cinema.jpg" width="300px" height="300px" alt="">
+            <script>
+                list("o","loveCinema","1","Король говорит!","Трилогия Хоббит","Трилогия Властелин Колец","Трилогия Матрица","Железная леди","Коллектор","Константин: Повелитель тьмы","Запах женщины")
+            </script>
+        </section>
+    </div>
+    <footer>
+        <p class="footerNote1">&copy; 2018 GRIDI</p>
+        <p class="footerNote2">г. Севастополь СевГУ</p>
+        <p class="anchor1"><a href="#top">Наверх</a></p>
+    </footer>
+    <script src="script/currentTime.js"></script>
+</div>
+</body>
+</html>
