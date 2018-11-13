@@ -13,6 +13,8 @@ function paintTable() {
     var t1 = 0;
 
 
+
+
     document.write(tbl);
     for (var i = 0; i < 6; i++) {
         document.write("<tr>");
@@ -31,24 +33,24 @@ function paintTable() {
         document.write("</tr>");
     }
     document.write("</table>");
-    var elem = document.querySelectorAll('img.tableImage');
-    console.log(elem);
+
+		var elem = document.querySelectorAll('img.tableImage');
+		var div = document.createElement('div');
+		var img = document.createElement('img');
+		div.id = "renderImage";
+		div.className = "imageWindow";
+
+
+
+
 		for (i=0;i<=elem.length;i++ ) {
 			elem[i].onclick = function () {
-				var div = document.createElement('div');
-				var img = document.createElement('img');
-				div.id = "dasda";
-				div.className = "imageWindow";
-				div.innerHTML = "<strong>Ура!</strong> Вы прочитали это важное сообщение.";
+				img.setAttribute('src', elem[0].src);
 				forBigImage.appendChild(div);
-				dasda.appendChild(img);
+				renderImage.appendChild(img);
 				div.onclick = function () {
 					div.remove();
 				}
-
-				// setTimeout(function() {
-				// 	div.parentNode.removeChild(div);
-				// }, 1000);
+			};
 		}
-	}
 }

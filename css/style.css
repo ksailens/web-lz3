@@ -413,12 +413,13 @@ input:focus, textarea:focus {
 
 .imageWindow {
     display: block;
-    width: 900px;
-    height: 500px;
-    border: 2px solid red;
-    background: #0000cc;
-    position: absolute;
+    min-width: 900px;
+    min-height: 800px;
+    /*border: 2px solid red;*/
+    background: darkgrey;
+    text-align: center;
+    position: fixed;
     margin: 0 auto;
-
-
+    /*left: 50%;*/
+    top: 10px;
 }
