@@ -6,7 +6,7 @@ function showCalendar(date) {
 	var daysInMonth;
 
 	document.getElementById("calendar").style.display = 'inline';
-	if (yearSelect.options.length == 0) {
+	if (yearSelect.options.length === 0) {
 		for (var year = 1900; year < date.getFullYear() + 1; year++) {
 			var option = new Option();
 			option.text = year;
@@ -34,7 +34,7 @@ function showCalendar(date) {
 
 	var daysCount = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
-	if ((date.getMonth() == 1) && (date.getFullYear() % 4 == 0))
+	if ((date.getMonth() === 1) && (date.getFullYear() % 4 === 0))
 		daysInMonth = 29;
 	else
 		daysInMonth = daysCount[date.getMonth()];
@@ -77,7 +77,7 @@ function showCalendar(date) {
 	var count = 7;
 
 	while (currentDay <= daysInMonth) {
-		if (count == 7) {
+		if (count === 7) {
 			var tr = document.createElement("tr");
 			table.appendChild(tr);
 			count = 0;
@@ -98,7 +98,7 @@ function showCalendar(date) {
 		td.style.border = "2px solid #B3D9FF";
 		td.style.background = "#FFFACD";
 	}
-	if (document.getElementById("dateOfBirth").value != ""){
+	if (document.getElementById("dateOfBirth").value !== ""){
 		var regExp = /(\d+)/;
 		var cur = document.getElementById("dateOfBirth").value;
 		document.getElementById(regExp.exec(cur)[0]).style.backgroundColor = "#FF6347";
