@@ -34,7 +34,7 @@ function paintTable() {
     }
     document.write("</table>");
 
-		var elem = document.querySelectorAll('img.tableImage');
+		var elems = document.querySelectorAll('img.tableImage');
 		var div = document.createElement('div');
 		var img = document.createElement('img');
 		div.id = "renderImage";
@@ -43,9 +43,9 @@ function paintTable() {
 
 
 
-		for (i=0;i<=elem.length;i++ ) {
-			elem[i].onclick = function () {
-				img.setAttribute('src', elem[0].src);
+		for (let i=0;i<=elems.length;i++ ) {
+			elems[i].onclick = function () {
+				img.setAttribute('src', elems[i].src);
 				forBigImage.appendChild(div);
 				renderImage.appendChild(img);
 				div.onclick = function () {

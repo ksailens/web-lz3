@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Персональный сайт Гридасовой Карины. Главная страница.</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="script/onMenuHoverBackgr.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -15,14 +16,18 @@
             </header>
             <nav>
                 <ul class="mainMenu">
-                    <li><a href="mainPage.html">Главная</a></li>
-                    <li><a href="aboutMe.html">Обо мне</a></li>
-                    <li><a href="myInterests.html">Мои интересы</a></li>
-                    <li><a href="photoalbum.html">Мой фотоальбом</a></li>
-                    <li><a href="education.html">Образование</a></li>
-                    <li><a href="contacts.html">Связь со мной</a></li>
-                    <li class="last"><a href="test.html">Входное тестирование</a></li>
+                    <li class="active"><a id="MainPage" href="mainPage.html">Главная</a></li>
+                    <li><a id="AboutMe" href="aboutMe.html" onmouseover="setBackground('AboutMe')" onmouseout="restore('AboutMe')">Обо мне</a></li>
+                    <li><a onclick = "showList()" id="myInterests" href="#" onmouseover="setBackground('myInterests')" onmouseout="restore('myInterests')">Мои интересы</a></li>
+                    <li><a id="Photoalbum" href="photoalbum.html" onmouseover="setBackground('Photoalbum')" onmouseout="restore('Photoalbum')">Мой фотоальбом</a></li>
+                    <li><a id="Education" href="education.html" onmouseover="setBackground('Education')" onmouseout="restore('Education')">Образование</a></li>
+                    <li><a id="Connection" href="contacts.html" onmouseover="setBackground('Connection')" onmouseout="restore('Connection')">Связь со мной</a></li>
+                    <li><a id="Test" href="test.html" onmouseover="setBackground('Test')" onmouseout="restore('Test')">Входное тестирование</a></li>
+                    <li class="last"><a id="History" href="history.html" onmouseover="setBackground('History')" onmouseout="restore('History')">История просмотров</a></li>
                 </ul>
+                <div class="mainMenu navigation" id ="inter">
+                    <script src="script/dropMenu.js"></script>
+                </div>
             </nav>
             <section>
                 <h2>Здравствуйте!</h2>

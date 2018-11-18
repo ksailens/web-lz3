@@ -5,6 +5,7 @@
     <title>Персональный сайт Гридасовой Карины. Связь со мной.</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="script/check.js"></script>
+    <script src="script/onMenuHoverBackgr.js"></script>
 </head>
 <body>
 <div class="wrapper">
@@ -16,14 +17,18 @@
         </header>
         <nav>
             <ul class="mainMenu">
-                <li><a href="mainPage.html">Главная</a></li>
-                <li><a href="aboutMe.html">Обо мне</a></li>
-                <li><a href="myInterests.html">Мои интересы</a></li>
-                <li><a href="photoalbum.html">Мой фотоальбом</a></li>
-                <li><a href="education.html">Образование</a></li>
-                <li><a href="contacts.html">Связь со мной</a></li>
-                <li class="last"><a href="test.html">Входное тестирование</a></li>
+                <li><a id="MainPage" href="mainPage.html" onmouseover="setBackground('MainPage')" onmouseout="restore('MainPage')">Главная</a></li>
+                <li><a id="AboutMe" href="aboutMe.html" onmouseover="setBackground('AboutMe')" onmouseout="restore('AboutMe')">Обо мне</a></li>
+                <li><a onclick = "showList()" id="myInterests" href="#" onmouseover="setBackground('myInterests')" onmouseout="restore('myInterests')">Мои интересы</a></li>
+                <li><a id="Photoalbum" href="photoalbum.html" onmouseover="setBackground('Photoalbum')" onmouseout="restore('Photoalbum')">Мой фотоальбом</a></li>
+                <li><a id="Education" href="education.html" onmouseover="setBackground('Education')" onmouseout="restore('Education')">Образование</a></li>
+                <li class="active"><a id="Connection" href="contacts.html">Связь со мной</a></li>
+                <li><a id="Test" href="test.html" onmouseover="setBackground('Test')" onmouseout="restore('Test')">Входное тестирование</a></li>
+                <li><a id="History" href="history.html" onmouseover="setBackground('History')" onmouseout="restore('History')">История просмотров</a></li>
             </ul>
+            <div class="mainMenu navigation" id ="inter">
+                <script src="script/dropMenu.js"></script>
+            </div>
         </nav>
         <section>
             <form id="contacts" action="mailto:quartz_90@mail.ru" method="post" name="contactsForm" onsubmit="return checkData()">
@@ -56,8 +61,10 @@
                 <p>Ваш e-mail:<br>
                     <input type="email" name="email" class="inputLength1" placeholder="Ваш e-mail">
                 </p>
+
+                <input type="date">
                 <textarea name="question" placeholder="Напишите свой вопрос"></textarea>
-                <input type="submit" name="submit" class="submit" form="contacts" value="Отправить">
+                <input type="submit" name="submit" class="submit" form="contacts" value="Отправить" disabled>
             </form>
         </section>
     </div>

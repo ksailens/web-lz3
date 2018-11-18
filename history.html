@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Персональный сайт Гридасовой Карины. Фотоальбом.</title>
+    <title>Персональный сайт Гридасовой Карины. Обо мне.</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="script/table.js"></script>
     <script src="script/onMenuHoverBackgr.js"></script>
 </head>
 <body>
@@ -16,26 +15,22 @@
             <h1>Вы попали на персональный сайт <br> Гридасовой Карины Владиславовны</h1>
         </header>
         <nav>
-            <ul class="mainMenu" id="mainMenu">
+            <ul class="mainMenu" >
                 <li><a id="MainPage" href="mainPage.html" onmouseover="setBackground('MainPage')" onmouseout="restore('MainPage')">Главная</a></li>
                 <li><a id="AboutMe" href="aboutMe.html" onmouseover="setBackground('AboutMe')" onmouseout="restore('AboutMe')">Обо мне</a></li>
                 <li><a onclick = "showList()" id="myInterests" href="#" onmouseover="setBackground('myInterests')" onmouseout="restore('myInterests')">Мои интересы</a></li>
-                <li class="active"><a id="Photoalbum" href="photoalbum.html">Мой фотоальбом</a></li>
+                <li><a id="Photoalbum" href="photoalbum.html" onmouseover="setBackground('Photoalbum')" onmouseout="restore('Photoalbum')">Мой фотоальбом</a></li>
                 <li><a id="Education" href="education.html" onmouseover="setBackground('Education')" onmouseout="restore('Education')">Образование</a></li>
                 <li><a id="Connection" href="contacts.html" onmouseover="setBackground('Connection')" onmouseout="restore('Connection')">Связь со мной</a></li>
                 <li><a id="Test" href="test.html" onmouseover="setBackground('Test')" onmouseout="restore('Test')">Входное тестирование</a></li>
-                <li><a id="History" href="history.html" onmouseover="setBackground('History')" onmouseout="restore('History')">История просмотров</a></li>
+                <li class="active"><a id="History" href="history.html">История просмотров</a></li>
             </ul>
             <div class="mainMenu navigation" id ="inter">
                 <script src="script/dropMenu.js"></script>
             </div>
         </nav>
         <section>
-            <h2>Мой фотоальбом</h2>
-            <div id="forBigImage"></div>
-            <script>
-                paintTable()
-            </script>
+            <h2>История просмотров</h2>
         </section>
     </div>
     <footer>
