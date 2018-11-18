@@ -427,3 +427,9 @@ input:focus, textarea:focus {
     /*left: 50%;*/
     top: 10px;
 }
+
+#calendar {
+    float: left;
+    clear: both;
+    margin-left: 20px;
+}

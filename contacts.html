@@ -6,8 +6,9 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="script/check.js"></script>
     <script src="script/onMenuHoverBackgr.js"></script>
+    <script src="script/calendar.js"></script>
 </head>
-<body>
+<body onload = "hideCalendar()">
 <div class="wrapper">
     <div class="content">
         <div class="currentTime" id="currentTime"></div>
@@ -61,10 +62,16 @@
                 <p>Ваш e-mail:<br>
                     <input type="email" name="email" class="inputLength1" placeholder="Ваш e-mail">
                 </p>
-
-                <input type="date">
+                <p>Дата рождения:<br>
+                    <input name = "dateOfBirth" id = "dateOfBirth" onclick = "showCalendar(new Date())" readonly value="">
+                </p>
+                <br>
+                    <div id = "calendar">
+                       <select id = "month" onclick = "redrawCalendar()"></select>
+                       <select id = "year" onclick="redrawCalendar()"></select>
+                    </div>
                 <textarea name="question" placeholder="Напишите свой вопрос"></textarea>
-                <input type="submit" name="submit" class="submit" form="contacts" value="Отправить" disabled>
+                <input type="submit" name="submit" class="submit" form="contacts" value="Отправить">
             </form>
         </section>
     </div>
