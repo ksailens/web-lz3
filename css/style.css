@@ -433,3 +433,7 @@ input:focus, textarea:focus {
     clear: both;
     margin-left: 20px;
 }
+
+.album th {
+    background: darkgrey;
+}
