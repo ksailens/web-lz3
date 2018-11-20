@@ -6,8 +6,9 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="script/list.js"></script>
     <script src="script/sessionStorageHistory.js"></script>
+    <script src="script/globalHistory.js"></script>
 </head>
-<body onload="sessionStorageHistory('Мои интересы')">
+<body onload="sessionStorageHistory('Мои интересы'); setCookie('Мои интересы')">
 <div class="wrapper">
     <div class="content">
         <div class="currentTime" id="currentTime"></div>

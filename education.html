@@ -6,8 +6,9 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="script/onMenuHoverBackgr.js"></script>
     <script src="script/sessionStorageHistory.js"></script>
+    <script src="script/globalHistory.js"></script>
 </head>
-<body onload="sessionStorageHistory('Образование')">
+<body onload="sessionStorageHistory('Образование'); setCookie('Образование')">
 <div class="wrapper">
     <div class="content">
         <div class="currentTime" id="currentTime"></div>
@@ -27,6 +28,7 @@
                 <li><a id="History" href="history.html" onmouseover="setBackground('History')" onmouseout="restore('History')">История просмотров</a></li>
             </ul>
             <div class="mainMenu navigation" id ="inter">
+                <script src="script/dropMenu.js"></script>
             </div>
         </nav>
         <section>
@@ -318,7 +320,6 @@
         <p class="anchor1"><a href="#top">Наверх</a></p>
     </footer>
     <script src="script/currentTime.js"></script>
-    <script src="script/dropMenu.js"></script>
 </div>
 </body>
 </html>

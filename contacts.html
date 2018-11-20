@@ -8,8 +8,9 @@
     <script src="script/onMenuHoverBackgr.js"></script>
     <script src="script/calendar.js"></script>
     <script src="script/sessionStorageHistory.js"></script>
+    <script src="script/globalHistory.js"></script>
 </head>
-<body onload = "hideCalendar(); sessionStorageHistory('Связь со мной')">
+<body onload = "hideCalendar(); sessionStorageHistory('Связь со мной'); setCookie('Связь со мной')">
 <div class="wrapper">
     <div class="content">
         <div class="currentTime" id="currentTime"></div>

@@ -7,8 +7,9 @@
     <script src="script/table.js"></script>
     <script src="script/onMenuHoverBackgr.js"></script>
     <script src="script/sessionStorageHistory.js"></script>
+    <script src="script/globalHistory.js"></script>
 </head>
-<body onload="sessionStorageHistory('Мой фотоальбом')">
+<body onload="sessionStorageHistory('Мой фотоальбом'); setCookie('Мой фотоальбом')">
 <div class="wrapper">
     <div class="content">
         <div class="currentTime" id="currentTime"></div>

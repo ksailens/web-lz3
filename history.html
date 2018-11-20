@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="script/onMenuHoverBackgr.js"></script>
     <script src="script/sessionStorageHistory.js"></script>
+    <script src="script/globalHistory.js"></script>
 </head>
 <body>
 <div class="wrapper">
@@ -34,6 +35,7 @@
             <h2>История просмотров</h2>
             <script>
                 getSessionStorage();
+                renderCookieTable('currentDate');
             </script>
         </section>
     </div>
