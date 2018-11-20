@@ -12,7 +12,7 @@ function sessionStorageHistory(name) {
 }
 
 function getSessionStorage(key) {
-	var tbl2 = "<table class=\"album\"";
+	var tbl2 = "<table class=\"album history\"";
 	document.write(tbl2);
 	document.write("<tr>");
 		document.write("<th>Страница:</th>");

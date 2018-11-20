@@ -94,7 +94,7 @@ nav {
 }
 
 .mainMenu li.active a {
-    background-color: #999;
+    background-color: #8CB3D2;
 }
 
 
@@ -435,5 +435,9 @@ input:focus, textarea:focus {
 }
 
 .album th {
-    background: darkgrey;
+    background: #D4E7EE;
+}
+
+.album.history {
+    background:  #5B7488;
 }
