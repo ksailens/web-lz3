@@ -1,3 +1,23 @@
+var x = document.getElementById("contacts");
+x.addEventListener("focus", myFocusFunction, true);
+x.addEventListener("blur", myBlurFunction, true);
+
+function myFocusFunction() {
+	document.getElementById("fullName").style.backgroundColor = "yellow";
+}
+
+function myBlurFunction() {
+	document.getElementById("fullName").style.backgroundColor = "";
+}
+
+
+// checkedName.onfocus = function() {
+// 	if (this.className == 'error') { // сбросить состояние "ошибка", если оно есть
+// 		this.className = "";
+// 		error.innerHTML = "";
+// 	}
+// };
+
 // function checkData() {
 //     var valid = true;
 //     var elems = document.contactsForm;
@@ -50,49 +70,3 @@
 //
 //     return valid;
 // }
-
-function validate() {
-	var valid_global = validate_form(document.form__contact),
-		valid_specific = validate_contacts(document.form__contact);
-	document.form__contact.submit.disabled = valid_global || valid_specific;
-}
-
-function validate_contacts(form) {
-	var validates = [
-		validate_field(form.name, /^[\wа-яё]+\s+[\wа-яё]+\s*[\wа-яё]*$/i, 'Введите в формате: Фамилия Имя Отчество'),
-		validate_field(form.tel, /^\+?(?:380(\d){9}|7\s*\(?\d{3}\)?\s*(?:-?\d){7})$/i, 'Допустимы действительные номера +7 и +380'),
-		validate_field(form.email, /^.+@.+\..+$/i, 'Введите действительную почту')
-	];
-	for (var i = 0; i < validates.length; i++) {
-		if (validates[i]) {
-			return true;
-		}
-	}
-	return false;
-}
-
-function initValidation() {
-	var form = document.form__contact,
-		inputs = form.getElementsByTagName('input'),
-		selects = form.getElementsByTagName('select'),
-		i;
-	for (i = 0; i < inputs.length; i++) {
-		inputs[i].addEventListener('change', validate);
-		if (inputs[i].type != 'checkbox' && inputs[i].type != 'radio') {
-			inputs[i].addEventListener('keyup', validate);
-		}
-	}
-	for (i = 0; i < selects.length; i++) {
-		selects[i].addEventListener('change', validate);
-	}
-}
-
-var once_contact = true;
-document.body.addEventListener('load', function () {
-	if (!once_contact) {
-		return;
-	}
-	once_contact = false;
-
-	initValidation();
-}, true);
