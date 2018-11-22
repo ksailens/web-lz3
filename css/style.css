@@ -43,8 +43,8 @@ h1  {
 }
 
 a {
-     text-decoration: none;
- }
+    text-decoration: none;
+}
 
 .content {
     box-sizing: border-box;
@@ -54,8 +54,8 @@ a {
 }
 
 nav {
-     margin-top: 10px;
- }
+    margin-top: 10px;
+}
 
 .mainMenu {
     width: 880px;
@@ -69,7 +69,7 @@ nav {
     position: relative;
     float: left;
     list-style: none;
-   /* border: 1px solid black;*/
+    /* border: 1px solid black;*/
     font-size: 14px;
     font-family: Arial, sans-serif;
     border-right: 1px solid black;
@@ -152,7 +152,6 @@ section h2 {
     width: 400px;
     height: 100px;
     resize: none;
-    margin-left: 20px;
     margin-top: 20px;
     float: left;
     clear: both;
@@ -440,4 +439,13 @@ input:focus, textarea:focus {
 
 .album.history {
     background:  #5B7488;
+}
+div#error {
+    float: left;
+    clear: both;
+    color: red;
+}
+
+.focusP2 {
+    width: 580px;
 }

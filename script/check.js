@@ -1,72 +1,110 @@
-var x = document.getElementById("contacts");
-x.addEventListener("focus", myFocusFunction, true);
-x.addEventListener("blur", myBlurFunction, true);
+	var fullName = document.getElementById("fullName");
+	var telephone = document.getElementById("telephone");
+	var emailValid = document.getElementById("email");
+	var dateOfBirth = document.getElementById('dateOfBirth');
+	var questionValidate = document.getElementById('question');
+	var sexSelection = document.getElementById('sexSelection');
+	var ageSelection = document.getElementById('ageSelection');
+	var ageSelectOption = document.getElementById('ageSelectOption');
+	var divError = document.createElement('div');
+	var getTestForm = document.contactsForm;
+	var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+	var validPattern = /^(\+7|\+3)[0-9]{9,11}$/;
+	divError.id = "error";
 
-function myFocusFunction() {
-	document.getElementById("fullName").style.backgroundColor = "yellow";
+	function createDivError(firstNode) {
+		firstNode.style.border = '2px solid red';
+		firstNode.parentNode.insertBefore(divError, firstNode.nextSibling);
+		divError.innerHTML = 'Неправильно заполнено поле!'
+	}
+
+	function clearDivError(firstNode) {
+		divError.innerHTML = '';
+		firstNode.style.border = '1px solid green'
+	}
+
+	// ageSelection.onmouseover = function () {
+	// 	if (getTestForm.age.selectedIndex === 0) {
+	// 		createDivError(ageSelection);
+	// 		ageSelection.style.border = 'none';
+	// 		ageSelectOption.style.border = '2px solid red';
+	// 		divError.style.marginLeft = '20px';
+	// 	} else {
+	// 		clearDivError(ageSelectOption);
+	// 		ageSelectOption.style.border = '1px solid green';
+	// 	}
+	// };
+
+
+	// sexSelection.onmouseover = function () {
+	// 	if ((getTestForm.pol[0].checked === false) && (getTestForm.pol[1].checked === false)) {
+	// 		sexSelection.style.width = '100px';
+	// 		createDivError(sexSelection);
+	// 		divError.style.marginLeft = '20px';
+	// 	} else {
+	// 		clearDivError(sexSelection)
+	// 	}
+	// };
+
+
+	questionValidate.onblur = function () {
+		if (questionValidate.value === '') {
+			questionValidate.focus();
+			createDivError(questionValidate);
+		} else {
+			clearDivError(questionValidate)
+		}
+	};
+
+
+	fullName.onblur = function () {
+		var wordCounter = fullName.value.split(" ").length;
+		if ((wordCounter < 3) || fullName.value === '') {
+			fullName.focus();
+			createDivError(fullName);
+		} else {
+			clearDivError(fullName)
+		}
+	};
+
+	telephone.onblur = function () {
+		// alert(telephone.value.match(validPattern));
+		if (telephone.value === '' || telephone.value.match(validPattern) === null) {
+			telephone.focus();
+			createDivError(telephone);
+		} else {
+			clearDivError(telephone)
+		}
+	};
+
+	emailValid.onblur = function () {
+		if (emailValid.value === '' || emailValid.value.match(re) === null) {
+			emailValid.focus();
+			createDivError(emailValid);
+		} else {
+			clearDivError(emailValid)
+		}
+	};
+
+	dateOfBirth.onblur = function () {
+		if (dateOfBirth.value === '') {
+			dateOfBirth.focus();
+			createDivError(dateOfBirth);
+		} else {
+			clearDivError(dateOfBirth)
+		}
+	};
+
+function checkedForm() {
+	var wordCounter = fullName.value.split(" ").length;
+	if (((getTestForm.pol[0].checked !== false) || (getTestForm.pol[1].checked !== false)) &&
+		(dateOfBirth.value !== '') &&
+		(emailValid.value !== '' || emailValid.value.match(re) !== null) &&
+		(telephone.value !== '' || telephone.value.match(validPattern) !== null) &&
+		((wordCounter >= 3) || fullName.value !== '') &&
+		(questionValidate.value !== '') &&
+		(getTestForm.age.selectedIndex !== 0)
+	) {
+		getTestForm.submit.removeAttribute('disabled');
+	}
 }
-
-function myBlurFunction() {
-	document.getElementById("fullName").style.backgroundColor = "";
-}
-
-
-// checkedName.onfocus = function() {
-// 	if (this.className == 'error') { // сбросить состояние "ошибка", если оно есть
-// 		this.className = "";
-// 		error.innerHTML = "";
-// 	}
-// };
-
-// function checkData() {
-//     var valid = true;
-//     var elems = document.contactsForm;
-//     var textArea = elems.FIO.value;
-//     var wordCounter = textArea.split(' ').length;
-//     var el4 = document.querySelector(".focusP2");
-//     var el5 = document.querySelector(".focusSelect3");
-//
-//     elems.tel.pattern = "(\\+7|\\+3)[0-9]{9,11}";
-//
-//     if ((elems.question.value === '')) {
-//         alert ( "Пожалуйста, напишите свой вопрос." );
-//         elems.question.focus();
-//         valid = false;
-//     }
-//
-//     if (elems.email.value === '') {
-//         alert ( "Пожалуйста, заполните поле 'Ваш e-mail'." );
-//         elems.email.focus();
-//         valid = false;
-//     }
-//
-//     if (elems.age.selectedIndex === 0) {
-//         alert ( "Пожалуйста, выберите Ваш возраст." );
-//         el5.style.border = "1px solid red";
-//         valid = false;
-//     } else {
-//         el5.style.border = "";
-//     }
-//
-//     if ((elems.pol[0].checked === false) && (elems.pol[1].checked === false)) {
-//         alert ( "Пожалуйста, выберите Ваш пол." );
-//         el4.style.border = "1px solid red";
-//         valid = false;
-//     } else {
-//         el4.style.border = "";
-//     }
-//
-//     if ((elems.tel.value === '')) {
-//         alert ( "Пожалуйста, заполните номер телефона в формате: +7 или +3, без пробелов, от 9 до 11 цифр, включая код." );
-//         elems.tel.focus();
-//         valid = false;
-//     }
-//
-//     if ((wordCounter<3) || elems.FIO.value === '') {
-//         alert ( "Пожалуйста, заполните поле 'Ваше ФИО' полностью.");
-//         elems.FIO.focus();
-//         valid = false;
-//     }
-//
-//     return valid;
-// }

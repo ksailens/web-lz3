@@ -34,20 +34,20 @@
             </div>
         </nav>
         <section>
-            <form id="contacts" action="mailto:quartz_90@mail.ru" method="post" name="contactsForm" onsubmit="return checkData()">
+            <form id="contacts" action="mailto:quartz_90@mail.ru" method="post" name="contactsForm" onchange="checkedForm()" onsubmit="return true">
                 <h3>Для связи со мной напишите свои личные данные и задайте вопрос.</h3>
                 <p>Ваше ФИО:<br>
                     <input id="fullName" type="text" size="40" name="FIO" class="inputLength1" title="Фамилия Имя Отчество полностью" placeholder="Фамилия Имя Отчество полностью">
                 </p>
                 <p>Ваш телефон:<br>
-                    <input type="tel" name="tel" placeholder="+7/+3XXXXXXXXXXX" title="+7 или +3 и 9-11 цифр">
+                    <input id="telephone" type="tel" name="tel" placeholder="+7/+3XXXXXXXXXXX" pattern="(\+7|\+3)[0-9]{9,11}" title="+7 или +3 и 9-11 цифр">
                 </p>
-                <p class="focusP2">Ваш пол<br>
+                <p id="sexSelection" class="focusP2">Ваш пол<br>
                     <label for="men"><input id="men" type="radio" name="pol" value="a1">Мужской<br></label>
                     <label for="women"><input id="women" type="radio" name="pol" value="a2">Женский<br></label>
                 </p>
-                <p>Ваш возраст: <br>
-                    <select class="focusSelect3" name="age">
+                <p id="ageSelection" class="focusP2">Ваш возраст: <br>
+                    <select id="ageSelectOption" class="focusSelect3" name="age">
                         <option value="">Выберите свой возраст</option>
                         <option value="от 15 до 18">от 15 до 18</option>
                         <option value="от 19 до 22">от 19 до 22</option>
@@ -62,18 +62,20 @@
                     </select>
                 </p>
                 <p>Ваш e-mail:<br>
-                    <input type="email" name="email" class="inputLength1" placeholder="Ваш e-mail">
+                    <input id="email" type="email" name="email" class="inputLength1" placeholder="Ваш e-mail">
                 </p>
                 <p>Дата рождения:<br>
                     <input name = "dateOfBirth" id = "dateOfBirth" onclick = "showCalendar(new Date())" readonly value="">
                 </p>
                 <br>
-                    <div id = "calendar">
-                       <select id = "month" onclick = "redrawCalendar()"></select>
-                       <select id = "year" onclick="redrawCalendar()"></select>
-                    </div>
-                <textarea name="question" placeholder="Напишите свой вопрос"></textarea>
-                <input type="submit" name="submit" class="submit" form="contacts" value="Отправить">
+                <div id = "calendar">
+                    <select id = "month" onclick = "redrawCalendar()"></select>
+                    <select id = "year" onclick="redrawCalendar()"></select>
+                </div>
+                <p>
+                    <textarea id="question" name="question" placeholder="Напишите свой вопрос"></textarea>
+                </p>
+                <input type="submit" name="submit" class="submit" form="contacts" value="Отправить" disabled>
             </form>
         </section>
     </div>
@@ -82,8 +84,8 @@
         <p class="footerNote2">г. Севастополь СевГУ</p>
         <p class="anchor1"><a href="#top">Наверх</a></p>
     </footer>
-    <script src="script/currentTime.js"></script>    <script src="script/check.js"></script>
-
+    <script src="script/currentTime.js"></script>
+    <script src="script/check.js"></script>
 </div>
 </body>
 </html>
